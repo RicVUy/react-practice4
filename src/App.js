@@ -14,18 +14,19 @@ import { Route, Switch, Redirect} from "react-router-dom";
 function App() {
 
   const [isLoggedIn, setLoggedIn] = useState(false);
+  const [isLoggedInE, setLoggedInE] = useState(false);
   return (
     <div>
     <NavBar />
       <Switch>
       <Route exact path="/EmployeeLogin">
-          <EmployeeLogin />
+          <EmployeeLogin isLoggedInE={isLoggedInE} setLoggedInE={setLoggedInE}/>
         </Route>
         <Route exact path="/TimeTracker">
-          <TimeTracker />
+        {isLoggedInE ? <TimeTracker /> : <Redirect to="/EmployeeLogin" />}
         </Route>
-        <Route exact path="/TimeList">
-          <TimeList />
+        <Route exact path="/TimeList"> 
+         {isLoggedInE ? <TimeList /> : <Redirect to="/EmployeeLogin" />}
         </Route>
         <Route path="/AdminLogin">
         <AdminLogin isLoggedIn={isLoggedIn} setLoggedIn={setLoggedIn} />
