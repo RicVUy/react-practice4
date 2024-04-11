@@ -10,15 +10,18 @@ function AdminLogin({ isLoggedIn, setLoggedIn })  {
     
       //const [employeeData, setEmployeeData] = useState(null);
       const [loginError, setLoginError] = useState('');
+      const [logIn, setLogIn] = useState(false)
       
       const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
+        
       };
     
       const handleFormSubmit = (e) => {
         e.preventDefault();
-    
+       
+      
     
     
         //  admin authentication 
@@ -28,6 +31,7 @@ function AdminLogin({ isLoggedIn, setLoggedIn })  {
         if (name === admin[i].name && password === admin[i].password) {
           // If authentication is successful, fetch employee data
           setLoggedIn(true);
+          setLogIn(!logIn)
           setLoginError({loginError})
           } else {
            // setEmployeeData(null);
@@ -58,7 +62,11 @@ function AdminLogin({ isLoggedIn, setLoggedIn })  {
             onChange={handleInputChange}
           />
         </div>
-        <button type="submit">Login</button>
+        {/*<button type="submit">Login</button>*/}
+        <button type="submit">{logIn ? "Log out" : "Log in"}
+       </button>
+        
+
       </form>
            
       

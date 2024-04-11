@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import './index.css';
 import EmployeePage from './component/Administrator/EmployeePage';
 import Header from './component/Header/Header';
-//import Personal from './component/Employee/Personal';
 import EmployeeEdit from './component/Administrator/EmployeeEdit';
 import EmployeeLogin from './component/Employee/EmployeeLogin';
 import TimeTracker from './component/Employee/TimeTracker';
@@ -14,19 +13,19 @@ import { Route, Switch, Redirect} from "react-router-dom";
 function App() {
 
   const [isLoggedIn, setLoggedIn] = useState(false);
-  const [isLoggedInE, setLoggedInE] = useState(false);
+  const [isLoggedIn1, setLoggedIn1] = useState(false);
   return (
     <div>
     <NavBar />
       <Switch>
-      <Route exact path="/EmployeeLogin">
-          <EmployeeLogin isLoggedInE={isLoggedInE} setLoggedInE={setLoggedInE}/>
+      <Route path="/EmployeeLogin">
+          <EmployeeLogin isLoggedIn1={isLoggedIn1} setLoggedIn1={setLoggedIn1}/>
         </Route>
-        <Route exact path="/TimeTracker">
-        {isLoggedInE ? <TimeTracker /> : <Redirect to="/EmployeeLogin" />}
+        <Route  path="/TimeTracker">
+        {isLoggedIn1 ? <TimeTracker /> : <Redirect to="/EmployeeLogin" />}
         </Route>
-        <Route exact path="/TimeList"> 
-         {isLoggedInE ? <TimeList /> : <Redirect to="/EmployeeLogin" />}
+        <Route  path="/TimeList"> 
+         {isLoggedIn1 ? <TimeList /> : <Redirect to="/EmployeeLogin" />}
         </Route>
         <Route path="/AdminLogin">
         <AdminLogin isLoggedIn={isLoggedIn} setLoggedIn={setLoggedIn} />

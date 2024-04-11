@@ -35,7 +35,7 @@ function NavBar() {
         Employee Login
       </NavLink>
       <NavLink
-        to="/TimeElapsed"
+        to="/TimeTracker"
         exact
         style={linkStyles}
         activeStyle={{

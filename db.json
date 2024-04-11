@@ -24,7 +24,7 @@
       "payPerHour": 35,
       "timeInEvents": [],
       "timeOutEvents": [],
-      "payForThisWeek": 0
+      "payForThisWeek": "789"
     },
     {
       "id": 3,
@@ -37,7 +37,7 @@
       "payPerHour": 33,
       "timeInEvents": [],
       "timeOutEvents": [],
-      "payForThisWeek": 0
+      "payForThisWeek": "1234567"
     },
     {
       "name": "JayR Cabanban",
@@ -59,10 +59,10 @@
       "position": "Accountant",
       "schedule": "Monday to Wednesday",
       "workTime": "8:00 AM to 5:00 PM",
-      "payPerHour": 35,
+      "payPerHour": "100",
       "timeInEvents": [],
       "timeOutEvents": [],
-      "payForThisWeek": "3000",
+      "payForThisWeek": "12",
       "id": 5
     },
     {

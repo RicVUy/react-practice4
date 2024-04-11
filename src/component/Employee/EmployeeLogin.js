@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { employees1 } from '../../data';
 import TimeTracker from './TimeTracker';
 import TimeList from './TimeList';
-function EmployeeLogin() {
+
+function EmployeeLogin({  setLoggedIn1 }) {
   const [formData, setFormData] = useState({
     name: '',
     password: '',
@@ -10,7 +11,7 @@ function EmployeeLogin() {
 
   const [employeeData, setEmployeeData] = useState(null);
   const [loginError, setLoginError] = useState('');
-  
+  const [logIn, setLogIn] = useState(false)
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -27,7 +28,9 @@ function EmployeeLogin() {
     for (let i=0; i<employees1.length; i++){
     if (name === employees1[i].name1 && password === employees1[i].password1) {
       // If authentication is successful, fetch employee data
-     fetchEmployeeData(name);
+      setLoggedIn1(true)
+      fetchEmployeeData(name);
+      setLogIn(!logIn)
       setLoginError('');
     } else {
       setEmployeeData(null);
@@ -79,7 +82,8 @@ function EmployeeLogin() {
             onChange={handleInputChange}
           />
         </div>
-        <button type="submit">Login</button>
+       {/* <button type="submit">Login</button>*/}
+        <button type="submit">{logIn ? "Log out" : "Log in"}</button>
       </form>
 
       {loginError && <p>{loginError}</p>}
