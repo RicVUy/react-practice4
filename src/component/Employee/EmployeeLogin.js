@@ -1,29 +1,52 @@
-import React, { useState } from 'react';
-import { employees1 } from '../../data';
+import React, { useState, useEffect } from 'react';
+//import { employees1 } from '../../data';
 import TimeTracker from './TimeTracker';
 import TimeList from './TimeList';
 import '../login.css'
 function EmployeeLogin({  setLoggedIn1 }) {
-  const [formData, setFormData] = useState({
+ /* const [formData, setFormData] = useState({
     name: '',
     password: '',
-  });
-
+  });*/
+  const [name, setName] = useState('')
+  const [password, setPassword] = useState('')
+ const [employees, setEmployees] = useState([])
   const [employeeData, setEmployeeData] = useState(null);
   const [loginError, setLoginError] = useState('');
   const [logIn, setLogIn] = useState(false)
-  const handleInputChange = (e) => {
+  /*const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-  };
+  };*/
 
+  useEffect(() => {
+    fetch("http://localhost:3001/employees")
+        .then(r => r.json())
+        .then(setEmployees) 
+        
+  }, []);
+console.log(employees)
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
+    const user = employees.find(user => user.name === name && user.password === password);
 
+    if (user) {
+      // Successful login
+      setLoggedIn1(true);
+      fetchEmployeeData(name);
+      setLogIn(!logIn)
+      setLoginError('')
+      } else {
+       
+  setLoginError('Invalid name or password');
+    
+     //console.log('Login successful');
+      
+    }
 
     //  employee authentication 
-    const { name, password } = formData;
+   /* const { name, password } = formData;
     
     for (let i=0; i<employees1.length; i++){
     if (name === employees1[i].name1 && password === employees1[i].password1) {
@@ -37,7 +60,8 @@ function EmployeeLogin({  setLoggedIn1 }) {
       setLoginError('Invalid name or password');
     }
    
-  }};
+  }*/
+};
   
   
   const fetchEmployeeData = (name) => {
@@ -73,8 +97,9 @@ function EmployeeLogin({  setLoggedIn1 }) {
             type="text"
             placeholder='Your name'
             name="name"
-            value={formData.name}
-            onChange={handleInputChange}
+            value={name}
+            //onChange={handleInputChange}
+            onChange={(e) => setName(e.target.value)}
           />
         </div>
         <div>
@@ -83,8 +108,9 @@ function EmployeeLogin({  setLoggedIn1 }) {
             type="password"
             placeholder='password'
             name="password"
-            value={formData.password}
-            onChange={handleInputChange}
+            value={password}
+           // onChange={handleInputChange}
+           onChange={(e) => setPassword(e.target.value)}
           />
         </div>
         

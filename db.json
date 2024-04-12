@@ -91,5 +91,17 @@
       "payForThisWeek": "07654",
       "id": 7
     }
+  ],
+ "admin": [
+  {
+    "id" : 1,
+    "name" :"James",
+    "password": "Stephen"
+  },
+  {
+    "id" : 2,
+    "name" :"Vivien",
+    "password": "Gertrude"
+  }
   ]
 }
