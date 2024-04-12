@@ -7,7 +7,7 @@ import EmployeeLogin from './component/Employee/EmployeeLogin';
 import TimeTracker from './component/Employee/TimeTracker';
 import TimeList from './component/Employee/TimeList';
 import AdminLogin from './component/Administrator/AdminLogin';
-import NavBar from './component/Header/NavBar';
+import NavBar1 from './component/Header/NavBar1';
 import { Route, Switch, Redirect} from "react-router-dom";
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
   const [isLoggedIn1, setLoggedIn1] = useState(false);
   return (
     <div>
-    <NavBar />
+    <NavBar1 />
       <Switch>
       <Route path="/EmployeeLogin">
           <EmployeeLogin isLoggedIn1={isLoggedIn1} setLoggedIn1={setLoggedIn1}/>

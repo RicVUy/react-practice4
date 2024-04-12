@@ -35,14 +35,7 @@ const EmployeePage = () => {
               }
 
   const filteredEmployees = employees.filter(employee => employee.name.toLowerCase().includes(searchTerm.toLowerCase()))          
-  //const filteredEmployees1 = employees.filter(employee => employee.ID === searchID)
-  /*const onUpdateEmployee = (updatedEmployee) => {
-    setEmployee(updatedEmployee)
-  }*/
-  /*function handleSearchEmployeeByID(id) {
-    const filteredEmployees = employees.filter(employee => employee.id === id)
-    setEmployees(filteredEmployees)
-  }*/
+ 
 
   return (
     <main>

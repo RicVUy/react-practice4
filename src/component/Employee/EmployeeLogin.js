@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { employees1 } from '../../data';
 import TimeTracker from './TimeTracker';
 import TimeList from './TimeList';
-
+import '../login.css'
 function EmployeeLogin({  setLoggedIn1 }) {
   const [formData, setFormData] = useState({
     name: '',
@@ -62,32 +62,39 @@ function EmployeeLogin({  setLoggedIn1 }) {
 
   return (
     <div>
+      <div className='login'>
+        <div className='login-container'>
       <h2>Employee Login</h2>
+      <div className='login-fields'>
       <form onSubmit={handleFormSubmit}>
         <div>
-          <label>Name:</label>
+         
           <input
             type="text"
+            placeholder='Your name'
             name="name"
             value={formData.name}
             onChange={handleInputChange}
           />
         </div>
         <div>
-          <label>Password:</label>
+         
           <input
             type="password"
+            placeholder='password'
             name="password"
             value={formData.password}
             onChange={handleInputChange}
           />
         </div>
+        
        {/* <button type="submit">Login</button>*/}
         <button type="submit">{logIn ? "Log out" : "Log in"}</button>
       </form>
-
+      </div>
       {loginError && <p>{loginError}</p>}
-
+      </div>
+      </div>
       {employeeData && (
         <div className='card'>
           <h2>Employee Data</h2>

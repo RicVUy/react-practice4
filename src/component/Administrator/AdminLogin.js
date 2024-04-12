@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { admin } from '../../data';
-
+import '../login.css'
 function AdminLogin({ isLoggedIn, setLoggedIn })  {
  
       const [formData, setFormData] = useState({
@@ -42,21 +42,26 @@ function AdminLogin({ isLoggedIn, setLoggedIn })  {
     
     return (
       <div>
+        <div className='login'>
+          <div className='login-container'>
         <h3>Administrator Login</h3>
+        <div className='login-fields'>
         <form onSubmit={handleFormSubmit}>
         <div>
-          <label>Name:</label>
+          
           <input
             type="text"
+            placeholder='Your name'
             name="name"
             value={formData.name}
             onChange={handleInputChange}
           />
         </div>
         <div>
-          <label>Password:</label>
+         
           <input
             type="password"
+            placeholder='password'
             name="password"
             value={formData.password}
             onChange={handleInputChange}
@@ -68,8 +73,9 @@ function AdminLogin({ isLoggedIn, setLoggedIn })  {
         
 
       </form>
-           
-      
+      </div>
+      </div>  
+      </div>
       </div>
     );
   };

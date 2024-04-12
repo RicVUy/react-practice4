@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Ricardo",
-      "image": "https://tse1.mm.bing.net/th?id=OIP.EKdqo9KahtB1sWyk7XCMhQAAAA&pid=Api&P=0&h=220",
+      "image": "https://www.freeconvertimage.com/converted_files/freeconvertimage-7fc392.png",
       "password": "dolphin",
       "position": "Cleaner",
       "schedule": "Thursday, Friday, Saturday, Sunday",
@@ -49,7 +49,7 @@
       "payPerHour": 14,
       "timeInEvents": [],
       "timeOutEvents": [],
-      "payForThisWeek": "345",
+      "payForThisWeek": "340000",
       "id": 4
     },
     {
@@ -75,7 +75,7 @@
       "payPerHour": 23,
       "timeInEvents": "3:00 AM",
       "timeOutEvents": "9:00",
-      "payForThisWeek": "0",
+      "payForThisWeek": "056789",
       "id": 6
     },
     {

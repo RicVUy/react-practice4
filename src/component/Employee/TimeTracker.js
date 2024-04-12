@@ -20,8 +20,7 @@ function TimeTracker() {
     if (startTime) {
       setEndTime(Date.now());
       setTotalTime(totalTime + (Date.now() - startTime));
-      //setPayForThisWeek(((totalTime/60000)*14).toFixed(2))
-      //{handleSaveClick}
+      
     }
   };
 

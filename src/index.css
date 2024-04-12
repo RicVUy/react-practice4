@@ -121,3 +121,33 @@ box-shadow: 2px 5px 5px #333;
     border-radius: 5px;
     box-shadow: 2px 5px 5px #333;  
   }
+  nav {
+    background-color: #333;
+    color: rgba(102, 25, 15, 0.616);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    
+  }
+  .top-links ul,
+  .bottom-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .top-links ul li,
+  .bottom-links ul li {
+    margin-right: 20px;
+  }
+  
+  .bottom-links {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
